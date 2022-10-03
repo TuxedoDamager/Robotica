@@ -1,0 +1,31 @@
+//sensores
+const int IN_A0 = A1;
+const int IN_D0 = 2;
+const int IN_A1 = A2;
+const int IN_D1 = 3;
+int value_A0; //sensor esquerda
+int value_A1; //sensor direita
+int value_D0;
+int value_D1;
+
+void setup() {
+Serial.begin(9600);
+pinMode (IN_A0, INPUT);
+pinMode (IN_A1, INPUT);
+pinMode (IN_D0, INPUT);
+pinMode (IN_D1, INPUT); }
+
+void loop() {
+value_A0=analogRead(IN_A0);
+value_A1=analogRead(IN_A1);
+value_D0=digitalRead(IN_D0);
+value_D1=digitalRead(IN_D1);
+Serial.print(value_A0);
+Serial.print("\t");
+Serial.print(value_A1);
+Serial.print("\t\t");
+Serial.print(value_D0);
+Serial.print("\t");
+Serial.print(value_D1);
+Serial.println();
+}
